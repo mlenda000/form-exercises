@@ -19,7 +19,7 @@
       <option value="Orion">Orion</option>
       <option value="Terrier">Terrier</option>   
              </select></label>
-      <label>Numner of boosters<input name='boosterCount' type="number"value='3' max='10' min='1'/></label>
+      <label>Number of boosters<input name='boosterCount' type="number"value='3' max='10' min='1'/></label>
 Wind Rating:
         <label>No Wind<input name='windRating' value='0' type="radio"/></label>
         <label>Mild<input name='windRating' value='10' type="radio" /></label>
@@ -31,6 +31,18 @@ Wind Rating:
 
     <p>WARNING: This ONLY works in <b>replit</b> if this "result" page is opened in its own window. Click the icon that shows a box with an arrow coming out of it.
     </p>
+    <script>
+      window.addEventListener("load", function() {
+         let form = document.querySelector("form");
+         form.addEventListener("submit", function(event) {
+            let testName = document.querySelector("input[name=testName]");
+
+            if (testName.value === "") {
+               alert("All fields are required!");
+            }
+         });
+      });
+   </script>
   </body>
   
 </html>
